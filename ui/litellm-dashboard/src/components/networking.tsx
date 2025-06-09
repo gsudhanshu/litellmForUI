@@ -9,7 +9,7 @@ import { UserInfo } from "./view_users/types";
 import { EmailEventSettingsResponse, EmailEventSettingsUpdateRequest } from "./email_events/types";
 
 const isLocal = process.env.NODE_ENV === "development";
-export const defaultProxyBaseUrl = isLocal ? "http://localhost:4000" : null;
+export const defaultProxyBaseUrl = "http://10.11.225.179:8001";
 const defaultServerRootPath = "/";
 export let serverRootPath = defaultServerRootPath;
 export let proxyBaseUrl = defaultProxyBaseUrl;
@@ -21,7 +21,7 @@ const updateProxyBaseUrl = (serverRootPath: string, receivedProxyBaseUrl: string
   /**
    * Special function for updating the proxy base url. Should only be called by getUiConfig.
    */
-  const defaultProxyBaseUrl = isLocal ? "http://localhost:4000" : window.location.origin;
+  const defaultProxyBaseUrl = isLocal ? "http://10.11.225.179:8001" : window.location.origin;
   let initialProxyBaseUrl = receivedProxyBaseUrl || defaultProxyBaseUrl;
   console.log("proxyBaseUrl:", proxyBaseUrl);
   console.log("serverRootPath:", serverRootPath);
